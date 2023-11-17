@@ -1,0 +1,28 @@
+
+
+.main-nav {
+    position: fixed;
+    bottom: 15%;
+    width: 60vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(39, 13, 13);
+    border-radius: 0.6rem;
+
+}
+
+.main-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3.2rem;
+    justify-content: center;
+}
+
+.main-nav-link:link, .main-nav-link:visited {
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+
+
