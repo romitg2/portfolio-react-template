@@ -10,10 +10,9 @@ import ProjectCard from "./Pages/Projects/ProjectCard/ProjectCard";
 function App() {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       {/* <Navigation /> */}
-      <Projects />
-      <ProjectCard />
+      {/* <Projects /> */}
       <div className="experience">
         <Canvas>{/* <Experience /> */}</Canvas>
       </div>
