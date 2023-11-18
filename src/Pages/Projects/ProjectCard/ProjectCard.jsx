@@ -1,4 +1,16 @@
+import CardFooter from "./CardFooter";
+import './projectCard.css';
+
 function ProjectCard() {
-  return <h1>ProjectCard</h1>;
+  return (
+    <>
+      
+      <div className="main-project-card">
+        
+        <CardFooter />
+      </div>
+
+    </>
+  )
 }
 export default ProjectCard;

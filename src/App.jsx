@@ -5,6 +5,7 @@ import Projects from "./Pages/Projects/Projects";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience/Experience";
 import "./app.css";
+import ProjectCard from "./Pages/Projects/ProjectCard/ProjectCard";
 
 function App() {
   return (
@@ -12,11 +13,9 @@ function App() {
       {/* <Hero /> */}
       {/* <Navigation /> */}
       <Projects />
-
+      <ProjectCard />
       <div className="experience">
-        <Canvas>
-          <Experience />
-        </Canvas>
+        <Canvas>{/* <Experience /> */}</Canvas>
       </div>
     </>
   );

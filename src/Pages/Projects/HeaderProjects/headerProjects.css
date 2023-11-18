@@ -1,0 +1,23 @@
+
+
+.home-projects-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.home-projects-title {
+    justify-content: center;
+}
+
+.home-projects-title-text {
+    font-size: 5rem;
+}
+
+.home-projects-description {
+    justify-content: center;
+}
+
+.home-projects-description-text {
+    font-size: 2rem;
+}
+

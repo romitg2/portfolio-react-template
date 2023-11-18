@@ -1,0 +1,20 @@
+
+.project-card-footer {
+    display: block;
+}
+
+.project-card-tech {
+    display: block;
+}
+
+.project-card-tech-text {
+    font-size: 1rem;
+}
+
+.project-card-name {
+    display: block;
+}
+
+.project-card-name-text {
+    font-size: 2rem;
+}
