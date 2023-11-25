@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Hero />
-      {/* <Navigation /> */}
+      <Navigation />
       {/* <Projects /> */}
       <div className="experience">
         <Canvas>{/* <Experience /> */}</Canvas>

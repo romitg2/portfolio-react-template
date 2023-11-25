@@ -1,0 +1,31 @@
+
+
+.hero {
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.hero-content {
+    margin-top: 30vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-name {
+    display: block;
+}
+
+.hero-name-text {
+    font-size: 4rem
+}
+
+.hero-usp {
+    font-size: 2rem;
+    display: block;
+}
+
+.hero-usp-text {
+
+    display: block;
+}
