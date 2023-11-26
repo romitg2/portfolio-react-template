@@ -6,6 +6,8 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience/Experience";
 import "./app.css";
 import ProjectCard from "./Pages/Projects/ProjectCard/ProjectCard";
+import Loading from "./Pages/Loading/Loading";
+
 
 function App() {
   return (
@@ -13,9 +15,10 @@ function App() {
       <Hero />
       {/* <Navigation /> */}
       {/* <Projects /> */}
-      <div className="experience">
+      <Loading />
+      {/* <div className="experience">
         <Canvas><Experience /></Canvas>
-      </div>
+      </div> */}
     </>
   );
 }

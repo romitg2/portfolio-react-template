@@ -84,6 +84,6 @@ void main() {
     float strength = step(0., sin(cnoise(vec3(vUv * 8., vTime * 0.1)) * 20.));
     strength = clamp(strength, 0.0, 1.0); 
     vec3 newColor = mix(vec3(0.0), vec3(vUv, 1.0), strength);
-    gl_FragColor = vec4(newColor, 1.0);
+    gl_FragColor = vec4(newColor, 0.0);
 
 }
