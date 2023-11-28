@@ -2,33 +2,37 @@
 .intro {
     height: 100vh;
     width: 100vw;
-    position: relative;
 }
 
 .intro-content {
     margin-top: 10vh;
+    position: relative;
 }
 
 .intro-image-box {
-    padding-right: 10vw;
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
 }
 
 .intro-image {
-    position: absolute;
+    z-index: -1;
     filter: grayscale(100%);
     height: 90vh;
     width: auto;
 }
 
 .intro-usp-box {
-    margin-left: 10vw;
+    z-index: 1;
+    position: absolute;
+    top: 25vh;
+    left: 20vw;
     width: 50vw;
 }
 
 .intro-usp-text {
     font-weight: 700;
-    font-size: 1.2rem;
     letter-spacing: -3px;
-    line-height: 1.1;
-    font-size: 5rem;
+    line-height: 0.9;
+    font-size: 7rem;
 }

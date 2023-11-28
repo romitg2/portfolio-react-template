@@ -7,16 +7,14 @@ function Projects() {
         <>
             {/* <h1>Projects</h1> */}
             <HeaderProjects />
-            <section>
+            <div className='projects-cards'>
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
-                <ProjectCard />
-                <ProjectCard />
-            </section>
+            </div>
         </>
     )
 }

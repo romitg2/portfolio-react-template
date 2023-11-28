@@ -1,0 +1,15 @@
+/* .main-project-card {
+
+} */
+
+.project-image-box {
+    justify-content: center;
+    width: 90%;
+    height: auto;
+}
+
+.project-image {
+    border-radius: 0.4rem;
+    width: 100%;
+    height: auto;
+}

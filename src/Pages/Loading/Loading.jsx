@@ -8,9 +8,8 @@ function Loading() {
         <div className="intro-content">
           <div className="intro-usp-box">
             <p className="intro-usp-text">
-              Lorem ipsum <br /> dolor, sit <br /> amet consectetur <br />{" "}
-              adipisicing elit. <br />
-              Quibusdam, sint!
+                
+            Express <br /> who you are <br />through <br /> your <br /> portfolio
             </p>
           </div>
           <div className="intro-image-box">

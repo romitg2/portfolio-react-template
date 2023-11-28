@@ -3,9 +3,11 @@
 .home-projects-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
 }
 
 .home-projects-title {
+    text-transform: uppercase;
     justify-content: center;
 }
 
@@ -14,10 +16,10 @@
 }
 
 .home-projects-description {
-    justify-content: center;
+    align-self: center;
 }
 
 .home-projects-description-text {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
