@@ -5,9 +5,29 @@ import vertex from "./../shaders/vertex.glsl";
 import { OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import * as THREE from "three";
+import { useEffect } from "react";
 
 function Experience() {
   const { camera, gl } = useThree();
+
+  // merging camera dimensions
+  
+  useEffect(() => {
+    camera.position.z = 600;
+    const theta = (180 / Math.PI) * 2 * Math.atan(window.innerHeight / (2 * 600));
+    camera.aspect = theta;
+  });
+
+  const cursor = {
+    x: 0,
+    y: 0,
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    cursor.x = e.x / window.innerWidth;
+    cursor.y = 1 - (e.y / window.innerHeight);
+  });
+
   const planeRef = useRef();
   gl.setPixelRatio(2);
 
@@ -56,6 +76,9 @@ function Experience() {
       },
       uTime: {
         value: 16,
+      },
+      uCursor: {
+        value: new THREE.Vector2(0.0, 0.0),
       }
     }),
     []
@@ -88,17 +111,21 @@ function Experience() {
     // updating time
 
     planeRef.current.material.uniforms.uTime.value = state.clock.elapsedTime;
+
+    // updating mosue
+
+    planeRef.current.material.uniforms.uCursor.value.set(cursor.x, cursor.y);
+
   });
 
   return (
     <>
-      <OrbitControls />
       <mesh
         ref={planeRef}
         // rotation={[-Math.PI / 3, 0, -Math.PI / 12]}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[12, 12, 3200, 3200]} />
+        <planeGeometry args={[window.innerWidth, window.innerHeight, 3200, 3200]} />
         <shaderMaterial
           vertexShader={vertex}
           fragmentShader={fragment}

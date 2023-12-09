@@ -2,6 +2,7 @@ varying vec2 vUv;
 varying float vTime;
 uniform float uBigWaveElevation;
 uniform vec3 waveColor;
+uniform vec2 uCursor;
 
 //	Classic Perlin 3D Noise 
 //	by Stefan Gustavson

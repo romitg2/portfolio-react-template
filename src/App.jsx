@@ -2,7 +2,7 @@ import Navigation from "./Components/Navigation/Navigation";
 import Hero from "./Pages/Hero/Hero";
 import Projects from "./Pages/Projects/Projects";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import Experience from "./Experience/Experience";
 import "./app.css";
 import ProjectCard from "./Pages/Projects/ProjectCard/ProjectCard";
@@ -22,18 +22,18 @@ function App() {
     }
   }, [])
 
-  
+
 
   return (
     <>
-      {/* <Hero /> */}
-      {/* <Loading /> */}
-      {/* <Navigation /> */}
-      {/* <Projects /> */}
-      
-      {/* <div className="experience">
-        <Canvas><Experience /></Canvas>
-      </div> */}
+      <Hero />
+      <Loading />
+      <Navigation />
+      <Projects />
+
+      <div className="experience">
+        {/* <Canvas><Experience /></Canvas> */}
+      </div>
     </>
   );
 }
