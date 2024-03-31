@@ -1,4 +1,4 @@
-import romit from "./../../assets/romit.png";
+import romit from "./../../assets/romit-2.jpg";
 import "./Loading.css";
 
 function Loading() {

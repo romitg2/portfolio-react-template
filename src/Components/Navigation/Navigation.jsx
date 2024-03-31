@@ -1,23 +1,39 @@
-import './navigation.css';
+import "./navigation.css";
 
 function Navigation() {
-
-    return (
-        <>
-            <h1>Navigation</h1>
-            <nav className='main-nav'>
-                <ul className='main-nav-list'>
-                    <li><a className='main-nav-link' href='#'>goto</a></li>
-                    <li><a className='main-nav-link' href='#'>goto</a></li>
-                    <li><a className='main-nav-link' href='#'>goto</a></li>
-                    <li><a className='main-nav-link' href='#'>goto</a></li>
-                    <li><a className='main-nav-link' href='#'>goto</a></li>
-                </ul>
-            </nav>
-        </>
-    )
+  return (
+    <>
+      <nav className="main-nav">
+        <ul className="main-nav-list">
+          <li>
+            <a className="main-nav-link" href="#">
+              Profile
+            </a>
+          </li>
+          <li>
+            <a className="main-nav-link" href="#">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a className="main-nav-link" href="#">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a className="main-nav-link" href="#">
+              About
+            </a>
+          </li>
+          <li>
+            <a className="main-nav-link" href="#">
+              FAQs
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
 }
 
 export default Navigation;
-
-

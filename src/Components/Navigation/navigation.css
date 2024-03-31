@@ -1,29 +1,41 @@
-
-
 .main-nav {
     position: fixed;
-    bottom: 15%;
-    width: fit-content;
-    padding: 0 5vw;
+    top: 85vh;
     left: 50%;
-    background-color: #ffffff;
     transform: translateX(-50%);
-    border-radius: 0.6rem;
-    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.2rem;
+    padding: 0rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    letter-spacing: 1px; 
+    font-weight: bolder; 
+    font-size: 1.0rem;  
+    color: #fff; /* Add this line to set the text color to white */
 }
+
 
 .main-nav-list {
     list-style: none;
     display: flex;
-    gap: 3.2rem;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center; /* Add this line to align items to center */
+    gap: 2vw;
 }
 
-.main-nav-link:link, .main-nav-link:visited {
+.main-nav-link {
     text-decoration: none;
-    display: inline-block;
+}
+    
+
+
+.main-nav-link:visited {
+    color: #f8f8f8; /* Off white color */
 }
 
-
-
-
+.main-nav-link:hover,
+.main-nav-link:focus,
+.main-nav-link:active {
+    color: #ffffff; /* White color */
+}

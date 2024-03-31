@@ -1,0 +1,18 @@
+.available {
+  display: flex;
+  gap: 0.5rem;
+  font-style: italic;
+}
+
+.available .dot {
+  color: limegreen;
+}
+
+.available .text {
+  color: limegreen;
+}
+
+.available .date {
+  color: white;
+  font-size: 0.7rem;
+}

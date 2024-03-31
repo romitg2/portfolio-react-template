@@ -3,7 +3,7 @@ import { useRef, useMemo } from "react";
 import fragment from "./../shaders/fragment.glsl";
 import vertex from "./../shaders/vertex.glsl";
 import { OrbitControls } from "@react-three/drei";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import * as THREE from "three";
 import { useEffect } from "react";
 
@@ -11,21 +11,22 @@ function Experience() {
   const { camera, gl } = useThree();
 
   // merging camera dimensions
-  
+
   useEffect(() => {
     camera.position.z = 600;
-    const theta = (180 / Math.PI) * 2 * Math.atan(window.innerHeight / (2 * 600));
+    const theta =
+      (180 / Math.PI) * 2 * Math.atan(window.innerHeight / (2 * 600));
     camera.aspect = theta;
   });
 
   const cursor = {
     x: 0,
     y: 0,
-  }
+  };
 
-  window.addEventListener('mousemove', (e) => {
+  window.addEventListener("mousemove", (e) => {
     cursor.x = e.x / window.innerWidth;
-    cursor.y = 1 - (e.y / window.innerHeight);
+    cursor.y = 1 - e.y / window.innerHeight;
   });
 
   const planeRef = useRef();
@@ -38,15 +39,15 @@ function Experience() {
 
   const waveFrequency = useControls("frequency", {
     uBigWaveFrequencyX: { value: 1.0, min: 0.0, max: 10.0, step: 0.1 },
-    uBigWaveFrequencyY: { value: 1.0, min: 0.0, max: 10.0,  step: 0.1 },
+    uBigWaveFrequencyY: { value: 1.0, min: 0.0, max: 10.0, step: 0.1 },
     uSmallWaveFreqnencyY: { value: 1.0, min: 0.0, max: 10.0, step: 0.1 },
     uSmallWaveFrequencyX: { value: 1.0, min: 0.0, max: 10.0, step: 0.1 },
   });
 
   const colorControl = useControls("color", {
-    waveColor: {value: '#ffffff'},
-    surfaceColor: {value: '#ffffff'},
-  })
+    waveColor: { value: "#ffffff" },
+    surfaceColor: { value: "#ffffff" },
+  });
 
   const uniforms = useMemo(
     () => ({
@@ -59,13 +60,13 @@ function Experience() {
       uBigWaveFrequency: {
         value: new THREE.Vector2(
           waveFrequency.uBigWaveFrequencyX,
-          waveFrequency.uBigWaveFrequencyY
+          waveFrequency.uBigWaveFrequencyY,
         ),
       },
       uSmallWaveFrequency: {
         value: new THREE.Vector2(
           waveFrequency.uSmallWaveFrequencyX,
-          waveFrequency.uSmallWaveFreqnencyY
+          waveFrequency.uSmallWaveFreqnencyY,
         ),
       },
       waveColor: {
@@ -79,9 +80,9 @@ function Experience() {
       },
       uCursor: {
         value: new THREE.Vector2(0.0, 0.0),
-      }
+      },
     }),
-    []
+    [],
   );
 
   useFrame((state) => {
@@ -95,18 +96,22 @@ function Experience() {
 
     // updating wave Frequency
 
-    planeRef.current.material.uniforms.uSmallWaveFrequency.value = new THREE.Vector2(
-      waveFrequency.uSmallWaveFrequencyX,
-      waveFrequency.uSmallWaveFreqnencyY
-    );
-    planeRef.current.material.uniforms.uBigWaveFrequency.value = new THREE.Vector2(
-      waveFrequency.uBigWaveFrequencyX,
-      waveFrequency.uBigWaveFrequencyY
-    );
-    
+    planeRef.current.material.uniforms.uSmallWaveFrequency.value =
+      new THREE.Vector2(
+        waveFrequency.uSmallWaveFrequencyX,
+        waveFrequency.uSmallWaveFreqnencyY,
+      );
+    planeRef.current.material.uniforms.uBigWaveFrequency.value =
+      new THREE.Vector2(
+        waveFrequency.uBigWaveFrequencyX,
+        waveFrequency.uBigWaveFrequencyY,
+      );
+
     // updating color
 
-    planeRef.current.material.uniforms.waveColor.value.set(colorControl.surfaceColor);
+    planeRef.current.material.uniforms.waveColor.value.set(
+      colorControl.surfaceColor,
+    );
 
     // updating time
 
@@ -115,17 +120,26 @@ function Experience() {
     // updating mosue
 
     planeRef.current.material.uniforms.uCursor.value.set(cursor.x, cursor.y);
-
   });
 
   return (
     <>
+      <Leva
+        fill // default = false,  true makes the pane fill the parent dom node it's rendered in
+        flat // default = false,  true removes border radius and shadow
+        oneLineLabels // default = false, alternative layout for labels, with labels and fields on separate rows
+        hideTitleBar // default = false, hides the GUI header
+        collapsed // default = false, when true the GUI is collpased
+        hidden // default = false, when true the GUI is hidden
+      />
       <mesh
         ref={planeRef}
         // rotation={[-Math.PI / 3, 0, -Math.PI / 12]}
         position={[0, 0, 0]}
       >
-        <planeGeometry args={[window.innerWidth, window.innerHeight, 3200, 3200]} />
+        <planeGeometry
+          args={[window.innerWidth, window.innerHeight, 3200, 3200]}
+        />
         <shaderMaterial
           vertexShader={vertex}
           fragmentShader={fragment}
